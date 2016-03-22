@@ -381,11 +381,9 @@ proc add_hps {} {
     set_instance_parameter_value hps_0 {desired_can0_clk_mhz} {100.0}
     set_instance_parameter_value hps_0 {desired_can1_clk_mhz} {100.0}
     set_instance_parameter_value hps_0 {desired_gpio_db_clk_hz} {32000}
-    set_instance_parameter_value hps_0 {S2FCLK_USER0CLK_Enable} {1}
-    set_instance_parameter_value hps_0 {S2FCLK_USER1CLK_Enable} {1}
+    set_instance_parameter_value hps_0 {S2FCLK_USER0CLK_Enable} {0}
+    set_instance_parameter_value hps_0 {S2FCLK_USER1CLK_Enable} {0}
     set_instance_parameter_value hps_0 {S2FCLK_USER2CLK_Enable} {0}
-    set_instance_parameter_value hps_0 {S2FCLK_USER1CLK_FREQ} {50.0}
-    set_instance_parameter_value hps_0 {S2FCLK_USER2CLK_FREQ} {100.0}
     set_instance_parameter_value hps_0 {main_pll_m} {63}
     set_instance_parameter_value hps_0 {main_pll_n} {0}
     set_instance_parameter_value hps_0 {main_pll_c3} {3}
@@ -422,8 +420,8 @@ proc add_hps {} {
     set_instance_parameter_value hps_0 {F2S_Width} {3}
     set_instance_parameter_value hps_0 {S2F_Width} {2}
     set_instance_parameter_value hps_0 {LWH2F_Enable} {true}
-    set_instance_parameter_value hps_0 {F2SDRAM_Type} {AXI-3}
-    set_instance_parameter_value hps_0 {F2SDRAM_Width} {64}
+    set_instance_parameter_value hps_0 {F2SDRAM_Type} {}
+    set_instance_parameter_value hps_0 {F2SDRAM_Width} {}
     set_instance_parameter_value hps_0 {BONDING_OUT_ENABLED} {0}
     set_instance_parameter_value hps_0 {S2FCLK_COLDRST_Enable} {0}
     set_instance_parameter_value hps_0 {S2FCLK_PENDINGRST_Enable} {0}
@@ -517,4 +515,3 @@ proc add_hps {} {
     add_interface hps_0_f2h_stm_hw_events conduit end
     set_interface_property hps_0_f2h_stm_hw_events EXPORT_OF hps_0.f2h_stm_hw_events
 }
-

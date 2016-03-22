@@ -1,7 +1,7 @@
 set devicefamily CYCLONEV
 set device 5CSEMA4U23C6
 
-set qipfiles "../ip/altsource_probe/hps_reset.qip,../ip/fft128/fft_test.qip"
+set qipfiles "../ip/altsource_probe/hps_reset.qip"
 set hdlfiles "../hdl_src/ghrd_top.v,../ip/edge_detect/altera_edge_detector.v,../ip/debounce/debounce.v"
 set topname ghrd_top
 
@@ -353,8 +353,6 @@ set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to fpga_dipsw_pio[1]
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to fpga_dipsw_pio[2]
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to fpga_dipsw_pio[3]
 
-#set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_CONV_USB_N
-
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to hps_spim1_CLK
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to hps_spim1_MOSI
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to hps_spim1_SS0
@@ -363,14 +361,9 @@ set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to hps_i2c0_SCL
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to hps_i2c1_SDA
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to hps_i2c1_SCL
 
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to hps_gpio_GPIO09
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to hps_gpio_GPIO35
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to hps_gpio_GPIO40
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to hps_gpio_GPIO53
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to hps_gpio_GPIO54
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to hps_gpio_GPIO61
-
-#set_global_assignment -name ENABLE_SIGNALTAP ON
-#set_global_assignment -name USE_SIGNALTAP_FILE ../hdl_src/fft_msgdma.stp
-#set_global_assignment -name SIGNALTAP_FILE ../hdl_src/fft_msgdma.stp
-#set_global_assignment -name SIGNALTAP_FILE ../hdl_src/validator.stp
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to hps_conv_usb_n
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to hps_emac1_int_n
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to hps_ltc_gpio
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to hps_led
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to hps_key
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to hps_gsensor_int

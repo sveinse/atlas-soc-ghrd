@@ -77,12 +77,12 @@ module ghrd_top
 	inout  wire        hps_i2c0_SCL,
 	inout  wire        hps_i2c1_SDA,
 	inout  wire        hps_i2c1_SCL,
-	inout  wire        hps_gpio_GPIO09,
-	inout  wire        hps_gpio_GPIO35,
-	inout  wire        hps_gpio_GPIO40,
-	inout  wire        hps_gpio_GPIO53,
-	inout  wire        hps_gpio_GPIO54,
-	inout  wire        hps_gpio_GPIO61, // ADC IRQ 
+	inout  wire        hps_conv_usb_n,
+	inout  wire        hps_emac1_int_n,
+	inout  wire        hps_ltc_gpio,
+	inout  wire        hps_led,
+	inout  wire        hps_key,
+	inout  wire        hps_gsensor_int,
 	
     // FPGA GPIO
 	input  wire [1:0]  fpga_key_pio,
@@ -124,6 +124,10 @@ assign arduino_reset_n = 1'b1;
 assign gpio_0 = 36'hZZZZZZZZZ;
 assign gpio_1 = 36'hZZZZZZZZZ;
 assign fpga_led_pio = fpga_led_internal;
+
+assign adc_convst = 1'b0;
+assign adc_sck = 1'b0;
+assign adc_sdi = 1'b0;
 
 
 // SoC sub-system module
@@ -205,12 +209,12 @@ soc_system soc_inst (
   .hps_0_hps_io_hps_io_i2c1_inst_SDA     (hps_i2c1_SDA),
   .hps_0_hps_io_hps_io_i2c1_inst_SCL     (hps_i2c1_SCL),
   //GPIO
-  .hps_0_hps_io_hps_io_gpio_inst_GPIO09  (hps_gpio_GPIO09),
-  .hps_0_hps_io_hps_io_gpio_inst_GPIO35  (hps_gpio_GPIO35),
-  .hps_0_hps_io_hps_io_gpio_inst_GPIO40  (hps_gpio_GPIO40),
-  .hps_0_hps_io_hps_io_gpio_inst_GPIO53  (hps_gpio_GPIO53),
-  .hps_0_hps_io_hps_io_gpio_inst_GPIO54  (hps_gpio_GPIO54),
-  .hps_0_hps_io_hps_io_gpio_inst_GPIO61  (hps_gpio_GPIO61), 
+  .hps_0_hps_io_hps_io_gpio_inst_GPIO09  (hps_conv_usb_n),
+  .hps_0_hps_io_hps_io_gpio_inst_GPIO35  (hps_emac1_int_n),
+  .hps_0_hps_io_hps_io_gpio_inst_GPIO40  (hps_ltc_gpio),
+  .hps_0_hps_io_hps_io_gpio_inst_GPIO53  (hps_led),
+  .hps_0_hps_io_hps_io_gpio_inst_GPIO54  (hps_key),
+  .hps_0_hps_io_hps_io_gpio_inst_GPIO61  (hps_gsensor_int),
   
   //STM
   .hps_0_f2h_stm_hw_events_stm_hwevents  (stm_hw_events),  

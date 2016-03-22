@@ -59,7 +59,7 @@ QSYS_HPS_INST_NAME = hps_0
 # AR_FILTER_OUT := downloads
 
 # initial save file list
-AR_REGEX += ip readme.txt mks                                         
+AR_REGEX += ip readme.txt mks README                                         
 AR_REGEX += scripts 
 AR_REGEX += patches 
 AR_REGEX += $(SCRIPT_DIR) 

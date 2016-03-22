@@ -1,0 +1,44 @@
+Atlas-SoC / DE0-Nano-SoC Hardware Design and Preloader
+======================================================
+
+This repo contains the build scripts to be able to build the FPGA
+Hardware design and (Linux) preloader of the Atlas-SoC / DE0-Nano-SoC
+evaluation kit
+
+http://www.terasic.com.tw/cgi-bin/page/archive.pl?Language=English&CategoryNo=163&No=941
+
+The Atlas-SoC and the DE0-Nano-SoC refers to the same physical kit, but sold
+under two different options/markeds. The DE0-Nano-SoC is targeting hardware
+designers, while the Atlas-SoC is targeting the software/linux aspect.
+
+For more information:
+
+https://rocketboards.org/foswiki/view/Documentation/AtlasSoCDevelopmentPlatform
+
+
+This repo is a fork of https://github.com/dwesterg/atlas-soc-ghrd and intends
+to be a simple baseline / template based off the GHRD (Golden Hardware
+Reference Design).
+
+Updated version of this repo can be found in:
+        https://github.com/sveinse/atlas-soc-ghrd
+
+
+Build procedure
+---------------
+A summary of the build procedure can be found here:
+
+https://rocketboards.org/foswiki/view/Documentation/AtlasSoCCompileHardwareDesign
+
+
+Build steps:
+
+  0. Install Quartus and EDS 15.1 or newer
+  
+  1. Clone or download this repo into a working directory
+  
+  2. Start EDS command shell and enter the working directory
+  
+  3. Build using make
+  
+       make all  - Build everything

@@ -1,7 +1,7 @@
 package require -exact qsys 14.1
 
-#Add Components
-add_instance altchip_id_0 altchip_id 15.0
+#Add Components (the version below needs to track the Quartus version, otherwise it wont get created)
+add_instance altchip_id_0 altchip_id 15.1
 set_instance_parameter_value altchip_id_0 {ID_VALUE} {18446744073709551615}
 
 add_instance chip_id_read_mm_0 chip_id_read_mm 1.0
